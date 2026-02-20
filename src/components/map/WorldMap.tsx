@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
-import { MapContainer, TileLayer, GeoJSON, useMap, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, useMap, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useAppStore } from '../../store/useAppStore';
-import { getCountryBounds, getCountryCentroid } from '../../utils/geography';
+import { getCountryCentroid } from '../../utils/geography';
 import type { GeoJSONData, GeoJSONFeature, Country, City } from '../../types';
 import citiesData from '../../data/cities.sample.json';
 import countriesData from '../../data/countries.sample.json';
@@ -128,7 +128,7 @@ interface CountryMarker {
 }
 
 export default function WorldMap({ geoJsonData, onCountryClick }: WorldMapProps) {
-  const { selectedCountry, selectedCity, setSelectedCity } = useAppStore();
+  const { selectedCountry, setSelectedCity } = useAppStore();
   const geoJsonRef = useRef<L.GeoJSON>(null);
   const [cities, setCities] = useState<City[]>([]);
   const mapZoom = useAppStore((state) => state.ui.mapZoom);
@@ -166,8 +166,8 @@ export default function WorldMap({ geoJsonData, onCountryClick }: WorldMapProps)
     // First, process countries from GeoJSON (if available)
     if (geoJsonData) {
       geoJsonData.features.forEach((feature) => {
-        const countryCode = feature.properties.ISO_A2 || feature.properties.ISO_A2_EH;
-        if (!countryCode) return;
+        const countryCode = (feature.properties?.ISO_A2 ?? feature.properties?.ISO_A2_EH) as string | undefined;
+        if (!countryCode || typeof countryCode !== 'string') return;
         
         // Find country data
         const country = countriesData.countries.find((c) => c.code === countryCode);
@@ -260,29 +260,26 @@ export default function WorldMap({ geoJsonData, onCountryClick }: WorldMapProps)
     }
   }, [selectedCountry, mapZoom]);
 
-  const onEachFeature = (feature: GeoJSONFeature, layer: L.Layer) => {
-    // Make polygons very subtle - no hover, no selection, just borders
-    layer.setStyle({
-      fillColor: '#e5e7eb',
-      fillOpacity: 0.05,
-      color: '#d1d5db',
-      weight: 0.5,
-      opacity: 0.3,
-    });
-    
-    // Disable pointer events on polygons to prevent interference with pin hover
-    (layer as unknown as { options?: { interactive?: boolean } }).options = {
-      ...(layer as unknown as { options?: Record<string, unknown> }).options,
-      interactive: false,
-    };
-    
-    // Remove all event handlers to prevent any interaction
+  const onEachFeature = (_feature: GeoJSONFeature, layer: L.Layer) => {
+    // Make polygons very subtle - no hover, no selection, just borders (GeoJSON layers are Path in Leaflet)
+    const path = layer as unknown as L.Path;
+    if (path.setStyle) {
+      path.setStyle({
+        fillColor: '#e5e7eb',
+        fillOpacity: 0.05,
+        color: '#d1d5db',
+        weight: 0.5,
+        opacity: 0.3,
+      });
+    }
+    const layerOpts = layer as unknown as { options?: Record<string, unknown> };
+    if (layerOpts.options) {
+      layerOpts.options.interactive = false;
+    }
     layer.off();
-    
-    // No hover effects, no click - polygons are just visual
-    // Remove any text labels that might be added by Leaflet
-    if ((layer as unknown as { unbindTooltip?: () => void }).unbindTooltip) {
-      (layer as unknown as { unbindTooltip: () => void }).unbindTooltip();
+    const layerWithTooltip = layer as unknown as { unbindTooltip?: () => void };
+    if (layerWithTooltip.unbindTooltip) {
+      layerWithTooltip.unbindTooltip();
     }
   };
 
@@ -313,7 +310,7 @@ export default function WorldMap({ geoJsonData, onCountryClick }: WorldMapProps)
         <GeoJSON
           ref={geoJsonRef}
           data={geoJsonData}
-          onEachFeature={onEachFeature}
+          onEachFeature={(f, layer) => onEachFeature(f as GeoJSONFeature, layer)}
         />
         <MapController selectedCountry={selectedCountry} />
         
@@ -338,7 +335,7 @@ export default function WorldMap({ geoJsonData, onCountryClick }: WorldMapProps)
         })}
         
         {/* City markers - only show when zoomed in */}
-        {cities.map((city, index) => (
+        {cities.map((city) => (
           <Marker
             key={city.id}
             position={[city.lat, city.lng]}

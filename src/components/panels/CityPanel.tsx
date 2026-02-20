@@ -1,14 +1,14 @@
 import { useAppStore } from '../../store/useAppStore';
 import type { City } from '../../types';
 import countriesData from '../../data/countries.sample.json';
-import Flag from 'country-flag-icons/react/3x2';
+import * as Flag from 'country-flag-icons/react/3x2';
 
 interface CityPanelProps {
   city: City;
 }
 
 export default function CityPanel({ city }: CityPanelProps) {
-  const { addDiscovery, discoveries, setSelectedCity, selectedCountry } = useAppStore();
+  const { addDiscovery, discoveries, setSelectedCity } = useAppStore();
   
   const country = countriesData.countries.find((c) => c.code === city.countryCode);
   const CountryFlagComponent = country?.code ? (Flag[country.code as keyof typeof Flag] as React.ComponentType<{ className?: string; title?: string }>) : null;

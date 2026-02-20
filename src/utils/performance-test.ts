@@ -25,7 +25,7 @@ export function testPerformance() {
 
   // Test 2: Marker creation
   const test2Start = performance.now();
-  const testMarkers = Array.from({ length: 200 }, (_, i) => ({
+  Array.from({ length: 200 }, (_, i) => ({
     code: `TEST${i}`,
     position: [Math.random() * 180 - 90, Math.random() * 360 - 180] as [number, number],
   }));
@@ -41,8 +41,9 @@ export function testPerformance() {
   const test3Start = performance.now();
   import('../data/world.geojson.fallback.json').then((data) => {
     import('../utils/geography').then(({ getCountryCentroid }) => {
-      data.default.features.forEach((feature) => {
-        getCountryCentroid(feature);
+      type GeoJSONFeature = import('../types').GeoJSONFeature;
+      data.default.features.forEach((feature: { type: string; geometry: unknown; properties: unknown }) => {
+        getCountryCentroid(feature as GeoJSONFeature);
       });
       const test3End = performance.now();
       results.push({

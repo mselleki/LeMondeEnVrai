@@ -3,7 +3,7 @@ import { useAppStore } from '../../store/useAppStore';
 import { fuzzySearchCountries } from '../../utils/geography';
 import countriesData from '../../data/countries.sample.json';
 import type { Country } from '../../types';
-import Flag from 'country-flag-icons/react/3x2';
+import * as Flag from 'country-flag-icons/react/3x2';
 
 export default function SearchBar() {
   const { setSelectedCountry } = useAppStore();

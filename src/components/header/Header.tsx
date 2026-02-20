@@ -6,7 +6,7 @@ import countriesData from '../../data/countries.sample.json';
 import type { Country } from '../../types';
 
 export default function Header() {
-  const { toggleDrawer, setSelectedCountry, selectedCountry } = useAppStore();
+  const { toggleDrawer, setSelectedCountry } = useAppStore();
 
   const handleRandomCountry = () => {
     const randomIndex = Math.floor(Math.random() * countriesData.countries.length);
@@ -15,7 +15,7 @@ export default function Header() {
   };
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+    <header className="absolute top-0 left-0 right-0 z-[1000] bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Left: Logo and Breadcrumb */}
@@ -45,8 +45,9 @@ export default function Header() {
               🎲 Aléatoire
             </button>
             <button
-              onClick={toggleDrawer}
-              className="px-4 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors flex items-center gap-2"
+              type="button"
+              onClick={() => toggleDrawer()}
+              className="px-4 py-2 text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors flex items-center gap-2 touch-manipulation"
               aria-label="Ouvrir Mes découvertes : pays et villes sauvegardés"
               title="Pays et villes que vous avez sauvegardés pour y revenir facilement"
             >

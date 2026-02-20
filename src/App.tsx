@@ -11,7 +11,7 @@ import type { GeoJSONData, GeoJSONFeature, Country } from './types';
 import countriesData from './data/countries.sample.json';
 
 function App() {
-  const { selectedCountry, selectedCity, setSelectedCountry, setSelectedCity, ui } = useAppStore();
+  const { selectedCountry, selectedCity, setSelectedCountry, ui } = useAppStore();
   const [geoJsonData, setGeoJsonData] = useState<GeoJSONData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 

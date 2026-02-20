@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAppStore } from '../../store/useAppStore';
 import type { Country, City } from '../../types';
-import Flag from 'country-flag-icons/react/3x2';
+import * as Flag from 'country-flag-icons/react/3x2';
 import citiesData from '../../data/cities.sample.json';
 
 interface CountryPanelProps {

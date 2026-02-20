@@ -9,7 +9,7 @@ export function getCountryBounds(feature: GeoJSONFeature): L.LatLngBounds | null
     return null;
   }
 
-  const coordinates = feature.geometry.coordinates;
+  const coordinates = feature.geometry.coordinates as number[][][] | number[][][][];
   let minLat = Infinity;
   let maxLat = -Infinity;
   let minLng = Infinity;
@@ -24,11 +24,11 @@ export function getCountryBounds(feature: GeoJSONFeature): L.LatLngBounds | null
   };
 
   if (feature.geometry.type === 'Polygon') {
-    coordinates.forEach((ring: number[][]) => {
+    (coordinates as number[][][]).forEach((ring: number[][]) => {
       ring.forEach(processCoordinate);
     });
   } else if (feature.geometry.type === 'MultiPolygon') {
-    coordinates.forEach((polygon: number[][][]) => {
+    (coordinates as number[][][][]).forEach((polygon: number[][][]) => {
       polygon.forEach((ring: number[][]) => {
         ring.forEach(processCoordinate);
       });
@@ -51,7 +51,7 @@ export function getCountryCentroid(feature: GeoJSONFeature): [number, number] | 
     return null;
   }
 
-  const coordinates = feature.geometry.coordinates;
+  const coordinates = feature.geometry.coordinates as number[][][] | number[][][][];
   let totalArea = 0;
   let weightedLat = 0;
   let weightedLng = 0;
@@ -100,13 +100,13 @@ export function getCountryCentroid(feature: GeoJSONFeature): [number, number] | 
 
   if (feature.geometry.type === 'Polygon') {
     // Use only the outer ring (first array)
-    const result = calculatePolygonCentroid(coordinates[0]);
+    const result = calculatePolygonCentroid((coordinates as number[][][])[0]);
     if (result.area > 0) {
       return [result.lat, result.lng];
     }
   } else if (feature.geometry.type === 'MultiPolygon') {
     // Calculate centroid for each polygon and weight by area
-    coordinates.forEach((polygon: number[][][]) => {
+    (coordinates as number[][][][]).forEach((polygon: number[][][]) => {
       const result = calculatePolygonCentroid(polygon[0]);
       if (result.area > 0) {
         totalArea += result.area;
@@ -126,10 +126,10 @@ export function getCountryCentroid(feature: GeoJSONFeature): [number, number] | 
 /**
  * Fuzzy search countries by name
  */
-export function fuzzySearchCountries(
+export function fuzzySearchCountries<T extends { name: string; nameFr?: string; code: string }>(
   query: string,
-  countries: Array<{ name: string; nameFr?: string; code: string }>
-): Array<{ name: string; nameFr?: string; code: string }> {
+  countries: T[]
+): T[] {
   if (!query.trim()) {
     return [];
   }

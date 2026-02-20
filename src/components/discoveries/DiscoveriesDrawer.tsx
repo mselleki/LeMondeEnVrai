@@ -2,10 +2,11 @@ import { useEffect, useRef } from 'react';
 import { useAppStore } from '../../store/useAppStore';
 import type { Discovery } from '../../types';
 import countriesData from '../../data/countries.sample.json';
-import Flag from 'country-flag-icons/react/3x2';
+import * as Flag from 'country-flag-icons/react/3x2';
 
 export default function DiscoveriesDrawer() {
-  const { drawerOpen, toggleDrawer, discoveries, setSelectedCountry, clearSelection, removeDiscovery } = useAppStore();
+  const { toggleDrawer, discoveries, setSelectedCountry, clearSelection, removeDiscovery } = useAppStore();
+  const drawerOpen = useAppStore((s) => s.ui.drawerOpen ?? false);
   const drawerRef = useRef<HTMLDivElement>(null);
 
   // Close drawer on Escape key
@@ -51,7 +52,7 @@ export default function DiscoveriesDrawer() {
       {/* Backdrop */}
       {drawerOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity animate-fade-in"
+          className="fixed inset-0 bg-black/50 z-[1100] transition-opacity animate-fade-in"
           onClick={toggleDrawer}
           aria-hidden="true"
         />
@@ -60,7 +61,7 @@ export default function DiscoveriesDrawer() {
       {/* Drawer */}
       <div
         ref={drawerRef}
-        className={`fixed right-0 top-0 h-full w-96 max-w-[85vw] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-out ${
+        className={`fixed right-0 top-0 h-full w-96 max-w-[85vw] bg-white shadow-2xl z-[1200] transform transition-transform duration-300 ease-out ${
           drawerOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         role="dialog"

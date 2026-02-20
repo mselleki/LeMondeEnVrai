@@ -55,6 +55,7 @@ export interface GeoJSONFeature {
     NAME?: string;
     NAME_EN?: string;
     ISO_A2?: string;
+    ISO_A2_EH?: string;
     [key: string]: unknown;
   };
   geometry: {

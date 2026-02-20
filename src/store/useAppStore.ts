@@ -85,10 +85,11 @@ export const useAppStore = create<AppStore>()(
       },
 
       toggleDrawer: () => {
+        const current = get().ui.drawerOpen ?? false;
         set({
           ui: {
             ...get().ui,
-            drawerOpen: !get().ui.drawerOpen,
+            drawerOpen: !current,
           },
         });
       },
