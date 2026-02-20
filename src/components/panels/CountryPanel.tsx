@@ -25,7 +25,7 @@ function SkeletonCard() {
 }
 
 export default function CountryPanel({ country, isLoading }: CountryPanelProps) {
-  const { curiosityScores, addDiscovery, discoveries, setSelectedCity } = useAppStore();
+  const { curiosityScores, addDiscovery, discoveries, setSelectedCity, clearSelection } = useAppStore();
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -78,7 +78,19 @@ export default function CountryPanel({ country, isLoading }: CountryPanelProps) 
         isAnimating ? 'animate-bounce-subtle' : ''
       }`}
     >
-      {/* Subtle top accent */}
+      {/* Top bar with close */}
+      <div className="shrink-0 flex items-center justify-end px-4 py-2 border-b border-slate-100 bg-white">
+        <button
+          type="button"
+          onClick={clearSelection}
+          className="p-2 rounded-lg text-gray-500 hover:text-gray-800 hover:bg-gray-100 transition-colors"
+          aria-label="Fermer le panel"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
       <div className="h-1 bg-gradient-to-r from-primary-500 to-primary-700 shrink-0" aria-hidden />
       <div className="flex-1 overflow-y-auto p-6 md:p-8 bg-gradient-to-b from-gray-50/80 to-white">
         {/* Header */}

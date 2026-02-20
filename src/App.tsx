@@ -70,18 +70,18 @@ function App() {
   }, []);
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-gray-50">
+    <div className="h-screen w-screen overflow-hidden bg-slate-100">
       <Header />
       
-      <main className="h-full pt-20 md:pt-24">
+      <main className="h-full pt-16 md:pt-20">
         <div className="relative h-full flex">
-          {/* Map */}
-          <div className="flex-1 h-full relative">
+          {/* Map area with subtle frame */}
+          <div className="flex-1 h-full relative min-w-0">
             {isLoading ? (
-              <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                <div className="text-center">
-                  <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-                  <p className="text-gray-600">Chargement de la carte...</p>
+              <div className="w-full h-full flex items-center justify-center bg-slate-50">
+                <div className="text-center px-6">
+                  <div className="inline-block animate-spin rounded-full h-10 w-10 border-2 border-primary-500 border-t-transparent mx-auto mb-4" />
+                  <p className="text-slate-600 font-medium">Chargement de la carte…</p>
                 </div>
               </div>
             ) : (
@@ -89,14 +89,14 @@ function App() {
             )}
           </div>
 
-          {/* Panel - Country or City (wider on desktop) */}
+          {/* Panel - Country or City */}
           {ui.panelOpen && (selectedCity || selectedCountry) && (
             <div
               className={`${
                 isMobile
-                  ? 'fixed bottom-0 left-0 right-0 h-2/3 rounded-t-2xl border-t'
-                  : 'w-[28rem] min-w-[22rem] max-w-[90vw] border-l'
-              } bg-white shadow-2xl z-20 transition-all duration-300 flex flex-col`}
+                  ? 'fixed bottom-0 left-0 right-0 h-[72vh] rounded-t-2xl border-t border-slate-200 shadow-[0_-4px_24px_rgba(0,0,0,0.08)]'
+                  : 'w-[28rem] min-w-[22rem] max-w-[90vw] border-l border-slate-200 shadow-[-4px_0_24px_rgba(0,0,0,0.06)]'
+              } bg-white z-20 transition-all duration-300 flex flex-col overflow-hidden`}
             >
               {selectedCity ? (
                 <CityPanel city={selectedCity} />

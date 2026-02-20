@@ -16,20 +16,29 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
-// Custom marker icon for cities (normal point)
-const createCityIcon = (color: string = '#10b981') => {
+// City marker: small location pin (distinct from country pins, clean and readable)
+const createCityIcon = () => {
+  const size = 20;
+  const color = '#0d9488'; // teal-600
+  const borderColor = '#ffffff';
   return L.divIcon({
     className: 'custom-marker city-marker',
     html: `<div style="
-      width: 12px;
-      height: 12px;
-      background-color: ${color};
-      border: 2px solid white;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    "></div>`,
-    iconSize: [12, 12],
-    iconAnchor: [6, 6],
+      width: ${size}px;
+      height: ${size}px;
+      cursor: pointer;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    ">
+      <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="8" fill="${color}" stroke="${borderColor}" stroke-width="2"/>
+        <circle cx="12" cy="12" r="3" fill="white" opacity="0.9"/>
+      </svg>
+    </div>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
   });
 };
 
@@ -285,8 +294,8 @@ export default function WorldMap({ geoJsonData, onCountryClick }: WorldMapProps)
 
   if (!geoJsonData) {
     return (
-      <div className="w-full h-full flex items-center justify-center bg-gray-100">
-        <div className="text-gray-500">Chargement de la carte...</div>
+      <div className="w-full h-full flex items-center justify-center bg-slate-50">
+        <p className="text-slate-500 font-medium">Chargement de la carte…</p>
       </div>
     );
   }
@@ -339,7 +348,7 @@ export default function WorldMap({ geoJsonData, onCountryClick }: WorldMapProps)
           <Marker
             key={city.id}
             position={[city.lat, city.lng]}
-            icon={createCityIcon('#10b981')}
+            icon={createCityIcon()}
             eventHandlers={{
               click: () => {
                 setSelectedCity(city);
