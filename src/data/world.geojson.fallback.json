@@ -1,0 +1,59 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "France",
+        "NAME_EN": "France",
+        "ISO_A2": "FR"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [2.0, 51.0],
+          [8.0, 51.0],
+          [8.0, 42.0],
+          [2.0, 42.0],
+          [2.0, 51.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "United States",
+        "NAME_EN": "United States",
+        "ISO_A2": "US"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-125.0, 49.0],
+          [-66.0, 49.0],
+          [-66.0, 25.0],
+          [-125.0, 25.0],
+          [-125.0, 49.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "Japan",
+        "NAME_EN": "Japan",
+        "ISO_A2": "JP"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [129.0, 46.0],
+          [146.0, 46.0],
+          [146.0, 24.0],
+          [129.0, 24.0],
+          [129.0, 46.0]
+        ]]
+      }
+    }
+  ]
+}

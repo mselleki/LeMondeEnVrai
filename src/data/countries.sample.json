@@ -1,0 +1,490 @@
+{
+  "countries": [
+    {
+      "id": "FR",
+      "name": "France",
+      "nameFr": "France",
+      "code": "FR",
+      "capital": "Paris",
+      "population": 68000000,
+      "languages": ["Français"],
+      "currency": "EUR",
+      "flag": "🇫🇷",
+      "fastFacts": [
+        "La France est le pays le plus visité au monde, accueillant plus de 89 millions de touristes par an.",
+        "Le Louvre à Paris est le plus grand musée d'art au monde et un monument historique.",
+        "La France produit plus de 1 000 variétés de fromage, plus que tout autre pays.",
+        "Le pays a remporté le plus grand nombre de prix Nobel de littérature (15) de toutes les nations.",
+        "La France abrite le train le plus rapide au monde, le TGV, atteignant des vitesses jusqu'à 320 km/h."
+      ]
+    },
+    {
+      "id": "US",
+      "name": "United States",
+      "nameFr": "États-Unis",
+      "code": "US",
+      "capital": "Washington, D.C.",
+      "population": 331000000,
+      "languages": ["Anglais", "Espagnol"],
+      "currency": "USD",
+      "flag": "🇺🇸",
+      "fastFacts": [
+        "Les États-Unis ont la plus grande économie mondiale en termes de PIB nominal.",
+        "Le parc national de Yellowstone fut le premier parc national au monde, créé en 1872.",
+        "Le pays s'étend sur six fuseaux horaires, de l'Alaska à Hawaï.",
+        "Le métro de New York est l'un des plus anciens et des plus grands au monde.",
+        "Les États-Unis produisent plus de films que tout autre pays, avec Hollywood comme épicentre."
+      ]
+    },
+    {
+      "id": "JP",
+      "name": "Japan",
+      "nameFr": "Japon",
+      "code": "JP",
+      "capital": "Tokyo",
+      "population": 125000000,
+      "languages": ["Japonais"],
+      "currency": "JPY",
+      "flag": "🇯🇵",
+      "fastFacts": [
+        "Le Japon compte plus de 5 millions de distributeurs automatiques, plus que tout autre pays.",
+        "Tokyo est la zone métropolitaine la plus peuplée au monde avec plus de 37 millions d'habitants.",
+        "Le pays a l'un des taux de criminalité les plus bas au monde.",
+        "Le Japon abrite la plus ancienne entreprise au monde, Kongo Gumi, fondée en 578 après J.-C.",
+        "Le pays subit plus de 1 500 séismes chaque année, bien que la plupart soient mineurs."
+      ]
+    },
+    {
+      "id": "BR",
+      "name": "Brazil",
+      "nameFr": "Brésil",
+      "code": "BR",
+      "capital": "Brasília",
+      "population": 215000000,
+      "languages": ["Portugais"],
+      "currency": "BRL",
+      "flag": "🇧🇷",
+      "fastFacts": [
+        "Le Brésil est le cinquième plus grand pays au monde en termes de superficie et de population.",
+        "La forêt amazonienne, principalement au Brésil, produit 20% de l'oxygène mondial.",
+        "Le Brésil a remporté la Coupe du monde de la FIFA plus de fois (5) que tout autre pays.",
+        "Le pays compte plus de 2 000 aéroports, plus que tout autre pays sauf les États-Unis.",
+        "Le portugais brésilien est parlé par plus de personnes que le portugais européen."
+      ]
+    },
+    {
+      "id": "AU",
+      "name": "Australia",
+      "nameFr": "Australie",
+      "code": "AU",
+      "capital": "Canberra",
+      "population": 26000000,
+      "languages": ["Anglais"],
+      "currency": "AUD",
+      "flag": "🇦🇺",
+      "fastFacts": [
+        "L'Australie est à la fois un pays et un continent, le plus petit continent du monde.",
+        "Le pays compte plus de 10 000 plages, plus que tout autre pays.",
+        "L'Australie a plus de kangourous que d'habitants - environ 50 millions de kangourous.",
+        "La Grande Barrière de Corail est le plus grand système de récifs coralliens au monde, visible depuis l'espace.",
+        "L'Australie est le seul continent sans volcan actif."
+      ]
+    },
+    {
+      "id": "CN",
+      "name": "China",
+      "nameFr": "Chine",
+      "code": "CN",
+      "capital": "Pékin",
+      "population": 1402000000,
+      "languages": ["Mandarin"],
+      "currency": "CNY",
+      "flag": "🇨🇳",
+      "fastFacts": [
+        "La Chine est le pays le plus peuplé au monde avec plus de 1,4 milliard d'habitants.",
+        "La Grande Muraille de Chine s'étend sur plus de 21 000 kilomètres.",
+        "Le pays a inventé le papier, la boussole, la poudre à canon et l'imprimerie.",
+        "Pékin a été la capitale de la Chine pendant plus de 800 ans.",
+        "La Chine possède le plus grand réseau ferroviaire à grande vitesse au monde."
+      ]
+    },
+    {
+      "id": "IN",
+      "name": "India",
+      "nameFr": "Inde",
+      "code": "IN",
+      "capital": "New Delhi",
+      "population": 1380000000,
+      "languages": ["Hindi", "Anglais"],
+      "currency": "INR",
+      "flag": "🇮🇳",
+      "fastFacts": [
+        "L'Inde est le deuxième pays le plus peuplé au monde.",
+        "Le pays compte 22 langues officielles et plus de 1 600 langues régionales.",
+        "L'Inde a inventé le concept du zéro et le système de numération décimale.",
+        "Le Taj Mahal est l'une des sept merveilles du monde moderne.",
+        "L'Inde produit plus de films que tout autre pays, avec Bollywood comme centre."
+      ]
+    },
+    {
+      "id": "GB",
+      "name": "United Kingdom",
+      "nameFr": "Royaume-Uni",
+      "code": "GB",
+      "capital": "Londres",
+      "population": 67000000,
+      "languages": ["Anglais"],
+      "currency": "GBP",
+      "flag": "🇬🇧",
+      "fastFacts": [
+        "Le Royaume-Uni est composé de quatre nations : Angleterre, Écosse, Pays de Galles et Irlande du Nord.",
+        "Londres a été la première ville au monde à avoir un métro, ouvert en 1863.",
+        "Le pays a produit plus de lauréats du prix Nobel que tout autre pays européen.",
+        "Stonehenge est l'un des monuments préhistoriques les plus célèbres au monde.",
+        "Le Royaume-Uni a la plus ancienne monarchie constitutionnelle au monde."
+      ]
+    },
+    {
+      "id": "DE",
+      "name": "Germany",
+      "nameFr": "Allemagne",
+      "code": "DE",
+      "capital": "Berlin",
+      "population": 83000000,
+      "languages": ["Allemand"],
+      "currency": "EUR",
+      "flag": "🇩🇪",
+      "fastFacts": [
+        "L'Allemagne est le pays le plus peuplé de l'Union européenne.",
+        "Le pays compte plus de 1 500 variétés de saucisses différentes.",
+        "L'Allemagne a produit plus de lauréats du prix Nobel que tout autre pays européen.",
+        "Berlin est neuf fois plus grande que Paris en superficie.",
+        "Le pays a inventé l'imprimerie moderne, l'automobile et l'aspirine."
+      ]
+    },
+    {
+      "id": "IT",
+      "name": "Italy",
+      "nameFr": "Italie",
+      "code": "IT",
+      "capital": "Rome",
+      "population": 59000000,
+      "languages": ["Italien"],
+      "currency": "EUR",
+      "flag": "🇮🇹",
+      "fastFacts": [
+        "L'Italie compte plus de sites du patrimoine mondial de l'UNESCO que tout autre pays (58).",
+        "Le pays a inventé la pizza, les pâtes et le café espresso.",
+        "Rome est la ville la plus ancienne d'Europe, fondée en 753 avant J.-C.",
+        "L'Italie produit plus de vin que tout autre pays au monde.",
+        "Le pays a la forme d'une botte, d'où son surnom 'Lo Stivale'."
+      ]
+    },
+    {
+      "id": "ES",
+      "name": "Spain",
+      "nameFr": "Espagne",
+      "code": "ES",
+      "capital": "Madrid",
+      "population": 47000000,
+      "languages": ["Espagnol"],
+      "currency": "EUR",
+      "flag": "🇪🇸",
+      "fastFacts": [
+        "L'Espagne est le deuxième pays le plus visité au monde après la France.",
+        "Le pays compte plus de 8 000 kilomètres de côtes.",
+        "L'Espagne a inventé la sieste, la guitare et le chocolat chaud.",
+        "Madrid est la capitale européenne la plus haute en altitude.",
+        "Le pays compte plus de 400 châteaux et forteresses."
+      ]
+    },
+    {
+      "id": "RU",
+      "name": "Russia",
+      "nameFr": "Russie",
+      "code": "RU",
+      "capital": "Moscou",
+      "population": 146000000,
+      "languages": ["Russe"],
+      "currency": "RUB",
+      "flag": "🇷🇺",
+      "fastFacts": [
+        "La Russie est le plus grand pays au monde, couvrant plus d'un neuvième de la surface terrestre.",
+        "Le pays s'étend sur 11 fuseaux horaires.",
+        "Moscou a le plus grand nombre de milliardaires par habitant au monde.",
+        "Le Transsibérien est la plus longue ligne ferroviaire au monde (9 289 km).",
+        "La Russie possède les plus grandes réserves de gaz naturel au monde."
+      ]
+    },
+    {
+      "id": "CA",
+      "name": "Canada",
+      "nameFr": "Canada",
+      "code": "CA",
+      "capital": "Ottawa",
+      "population": 38000000,
+      "languages": ["Anglais", "Français"],
+      "currency": "CAD",
+      "flag": "🇨🇦",
+      "fastFacts": [
+        "Le Canada est le deuxième plus grand pays au monde en superficie.",
+        "Le pays a la plus longue frontière terrestre au monde avec les États-Unis.",
+        "Le Canada possède plus de lacs que tous les autres pays réunis.",
+        "Le pays a deux langues officielles : l'anglais et le français.",
+        "Le Canada a inventé le basketball, le hockey sur glace et l'insuline."
+      ]
+    },
+    {
+      "id": "MX",
+      "name": "Mexico",
+      "nameFr": "Mexique",
+      "code": "MX",
+      "capital": "Mexico",
+      "population": 128000000,
+      "languages": ["Espagnol"],
+      "currency": "MXN",
+      "flag": "🇲🇽",
+      "fastFacts": [
+        "Le Mexique est le pays hispanophone le plus peuplé au monde.",
+        "Le pays a inventé le chocolat, les tomates et les avocats.",
+        "Mexico est l'une des plus grandes villes au monde avec plus de 21 millions d'habitants.",
+        "Le Mexique compte 35 sites du patrimoine mondial de l'UNESCO.",
+        "Le pays produit plus de bière que tout autre pays d'Amérique latine."
+      ]
+    },
+    {
+      "id": "ZA",
+      "name": "South Africa",
+      "nameFr": "Afrique du Sud",
+      "code": "ZA",
+      "capital": "Le Cap",
+      "population": 60000000,
+      "languages": ["Afrikaans", "Anglais", "Zoulou"],
+      "currency": "ZAR",
+      "flag": "🇿🇦",
+      "fastFacts": [
+        "L'Afrique du Sud compte 11 langues officielles.",
+        "Le pays possède les plus grandes réserves d'or au monde.",
+        "Le Cap abrite l'une des plus grandes colonies de pingouins au monde.",
+        "L'Afrique du Sud a trois capitales : Le Cap, Pretoria et Bloemfontein.",
+        "Le pays a inventé le pacemaker cardiaque et la première greffe de cœur au monde."
+      ]
+    },
+    {
+      "id": "EG",
+      "name": "Egypt",
+      "nameFr": "Égypte",
+      "code": "EG",
+      "capital": "Le Caire",
+      "population": 104000000,
+      "languages": ["Arabe"],
+      "currency": "EGP",
+      "flag": "🇪🇬",
+      "fastFacts": [
+        "L'Égypte abrite la seule des sept merveilles du monde antique encore debout : les pyramides de Gizeh.",
+        "Le Nil est le plus long fleuve au monde, s'étendant sur 6 650 kilomètres.",
+        "Le pays a inventé le papier, l'écriture et le calendrier de 365 jours.",
+        "Le Caire est la plus grande ville d'Afrique et du Moyen-Orient.",
+        "L'Égypte compte plus de 100 pyramides, pas seulement celles de Gizeh."
+      ]
+    },
+    {
+      "id": "AR",
+      "name": "Argentina",
+      "nameFr": "Argentine",
+      "code": "AR",
+      "capital": "Buenos Aires",
+      "population": 45000000,
+      "languages": ["Espagnol"],
+      "currency": "ARS",
+      "flag": "🇦🇷",
+      "fastFacts": [
+        "L'Argentine est le huitième plus grand pays au monde en superficie.",
+        "Le pays a produit plus de lauréats du prix Nobel que tout autre pays d'Amérique latine.",
+        "Buenos Aires est souvent appelée 'le Paris de l'Amérique du Sud'.",
+        "L'Argentine a inventé le tango, la bande dessinée et l'empreinte digitale.",
+        "Le pays possède la plus grande population de baleines au monde."
+      ]
+    },
+    {
+      "id": "KR",
+      "name": "South Korea",
+      "nameFr": "Corée du Sud",
+      "code": "KR",
+      "capital": "Séoul",
+      "population": 51000000,
+      "languages": ["Coréen"],
+      "currency": "KRW",
+      "flag": "🇰🇷",
+      "fastFacts": [
+        "La Corée du Sud a l'un des taux de connexion Internet les plus rapides au monde.",
+        "Le pays a inventé le système d'écriture hangul, considéré comme l'un des plus scientifiques au monde.",
+        "Séoul est la quatrième plus grande zone métropolitaine au monde.",
+        "La Corée du Sud produit plus de navires que tout autre pays au monde.",
+        "Le pays a l'un des taux de suicide les plus élevés parmi les pays développés."
+      ]
+    },
+    {
+      "id": "TR",
+      "name": "Turkey",
+      "nameFr": "Turquie",
+      "code": "TR",
+      "capital": "Ankara",
+      "population": 84000000,
+      "languages": ["Turc"],
+      "currency": "TRY",
+      "flag": "🇹🇷",
+      "fastFacts": [
+        "La Turquie est située à cheval sur deux continents : l'Europe et l'Asie.",
+        "Istanbul est la seule ville au monde située sur deux continents.",
+        "Le pays a inventé le café turc, le baklava et le döner kebab.",
+        "La Turquie compte plus de sites archéologiques que tout autre pays.",
+        "Le pays possède l'un des plus anciens marchés couverts au monde : le Grand Bazar d'Istanbul."
+      ]
+    },
+    {
+      "id": "SA",
+      "name": "Saudi Arabia",
+      "nameFr": "Arabie Saoudite",
+      "code": "SA",
+      "capital": "Riyad",
+      "population": 35000000,
+      "languages": ["Arabe"],
+      "currency": "SAR",
+      "flag": "🇸🇦",
+      "fastFacts": [
+        "L'Arabie Saoudite possède les plus grandes réserves de pétrole au monde.",
+        "Le pays abrite les deux villes les plus saintes de l'islam : La Mecque et Médine.",
+        "L'Arabie Saoudite n'a pas de rivières permanentes.",
+        "Le pays a construit la plus haute tour au monde : la tour Jeddah (1 008 mètres).",
+        "L'Arabie Saoudite compte plus de 2 000 châteaux et forteresses historiques."
+      ]
+    },
+    {
+      "id": "NL",
+      "name": "Netherlands",
+      "nameFr": "Pays-Bas",
+      "code": "NL",
+      "capital": "Amsterdam",
+      "population": 17500000,
+      "languages": ["Néerlandais"],
+      "currency": "EUR",
+      "flag": "🇳🇱",
+      "fastFacts": [
+        "Les Pays-Bas sont le plus grand exportateur de fleurs au monde, notamment de tulipes.",
+        "Un quart du pays est sous le niveau de la mer, protégé par des digues et des polders.",
+        "Amsterdam compte plus de 1 200 ponts et autant de vélos que d'habitants.",
+        "Le fromage de Gouda et d'Edam tirent leur nom de villes néerlandaises.",
+        "Les Néerlandais sont les plus grands du monde en taille moyenne."
+      ]
+    },
+    {
+      "id": "PT",
+      "name": "Portugal",
+      "nameFr": "Portugal",
+      "code": "PT",
+      "capital": "Lisbonne",
+      "population": 10300000,
+      "languages": ["Portugais"],
+      "currency": "EUR",
+      "flag": "🇵🇹",
+      "fastFacts": [
+        "Le Portugal est le plus vieux pays d'Europe avec des frontières inchangées depuis 1249.",
+        "Lisbonne est plus vieille que Rome et fut dévastée par un séisme en 1755.",
+        "Le pays a inventé la tempura (introduite au Japon par les Portugais).",
+        "Le fado, chant mélancolique de Lisbonne, est inscrit au patrimoine immatériel de l'UNESCO.",
+        "Le portugais est la langue officielle de neuf pays sur quatre continents."
+      ]
+    },
+    {
+      "id": "MA",
+      "name": "Morocco",
+      "nameFr": "Maroc",
+      "code": "MA",
+      "capital": "Rabat",
+      "population": 37000000,
+      "languages": ["Arabe", "Amazigh"],
+      "currency": "MAD",
+      "flag": "🇲🇦",
+      "fastFacts": [
+        "Le Maroc possède la plus ancienne université du monde encore en activité : Al Quaraouiyine à Fès (859).",
+        "Les marchés (souks) de Marrakech attirent plus de visiteurs que tout autre lieu d'Afrique.",
+        "Le pays produit plus de 70 % des réserves mondiales de phosphate.",
+        "Le thé à la menthe est le symbole de l'hospitalité marocaine.",
+        "Chefchaouen, la « ville bleue », doit sa couleur à une tradition juive du XVe siècle."
+      ]
+    },
+    {
+      "id": "GR",
+      "name": "Greece",
+      "nameFr": "Grèce",
+      "code": "GR",
+      "capital": "Athènes",
+      "population": 10400000,
+      "languages": ["Grec"],
+      "currency": "EUR",
+      "flag": "🇬🇷",
+      "fastFacts": [
+        "La Grèce compte plus d'îles que tout autre pays méditerranéen (environ 6 000, dont 227 habitées).",
+        "Athènes est considérée comme le berceau de la démocratie et de la philosophie occidentale.",
+        "Le pays a plus de musées archéologiques que tout autre pays au monde.",
+        "La Grèce produit 2,2 % du pétrole d'olive mondial mais possède le plus grand nombre d'oliviers par habitant.",
+        "L'alphabet grec est à l'origine des alphabets latin et cyrillique."
+      ]
+    },
+    {
+      "id": "PL",
+      "name": "Poland",
+      "nameFr": "Pologne",
+      "code": "PL",
+      "capital": "Varsovie",
+      "population": 38000000,
+      "languages": ["Polonais"],
+      "currency": "PLN",
+      "flag": "🇵🇱",
+      "fastFacts": [
+        "La Pologne a donné au monde Copernic, Marie Curie et Chopin.",
+        "Varsovie a été reconstruite à l'identique après la Seconde Guerre mondiale grâce à des tableaux de Canaletto.",
+        "Le château de Malbork est le plus grand château de briques au monde.",
+        "La Pologne compte 17 sites inscrits au patrimoine mondial de l'UNESCO.",
+        "Cracovie fut la capitale du pays pendant plus de 500 ans."
+      ]
+    },
+    {
+      "id": "TH",
+      "name": "Thailand",
+      "nameFr": "Thaïlande",
+      "code": "TH",
+      "capital": "Bangkok",
+      "population": 70000000,
+      "languages": ["Thaï"],
+      "currency": "THB",
+      "flag": "🇹🇭",
+      "fastFacts": [
+        "La Thaïlande est le seul pays d'Asie du Sud-Est à n'avoir jamais été colonisé.",
+        "Bangkok s'appelle en thaï « Krung Thep », un des noms de ville les plus longs au monde.",
+        "Le pays est le plus grand exportateur de riz au monde.",
+        "Les thaïlandais célèbrent le Nouvel An en avril (Songkran) avec une gigantesque bataille d'eau.",
+        "Le sourire thaï est reconnu comme un art de vivre et une marque de respect."
+      ]
+    },
+    {
+      "id": "ID",
+      "name": "Indonesia",
+      "nameFr": "Indonésie",
+      "code": "ID",
+      "capital": "Jakarta",
+      "population": 275000000,
+      "languages": ["Indonésien"],
+      "currency": "IDR",
+      "flag": "🇮🇩",
+      "fastFacts": [
+        "L'Indonésie est le plus grand archipel du monde avec plus de 17 500 îles.",
+        "Java, une seule île, compte plus d'habitants que la Russie tout entière.",
+        "Le pays abrite le plus grand lézard du monde : le dragon de Komodo.",
+        "Le café kopi luwak, l'un des plus chers au monde, vient d'Indonésie.",
+        "Borobudur, à Java, est le plus grand temple bouddhiste au monde."
+      ]
+    }
+  ]
+}
