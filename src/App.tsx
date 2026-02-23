@@ -7,7 +7,7 @@ import Header from './components/header/Header';
 import { useAppStore } from './store/useAppStore';
 import { loadGeoJSON } from './utils/loadGeoJSON';
 import { getCountryBounds } from './utils/geography';
-import type { GeoJSONData, GeoJSONFeature, Country } from './types';
+import type { GeoJSONData, GeoJSONFeature } from './types';
 import countriesData from './data/countries.sample.json';
 
 function App() {
