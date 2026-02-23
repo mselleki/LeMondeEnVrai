@@ -935,6 +935,54 @@
         "Denpasar est la capitale de Bali, île connue pour ses temples et sa culture.",
         "Bali attire des millions de touristes pour ses plages, rizières et spiritualité."
       ]
+    },
+    {
+      "id": "mascate-om",
+      "name": "Mascate",
+      "countryCode": "OM",
+      "lat": 23.5880,
+      "lng": 58.3829,
+      "population": 1420000,
+      "facts": [
+        "Mascate (Muscat) est la capitale d'Oman, entre mer et montagne.",
+        "La Grande Mosquée du Sultan Qaboos peut accueillir 20 000 fidèles."
+      ]
+    },
+    {
+      "id": "tachkent-uz",
+      "name": "Tachkent",
+      "countryCode": "UZ",
+      "lat": 41.2995,
+      "lng": 69.2401,
+      "population": 2570000,
+      "facts": [
+        "Tachkent est la capitale de l'Ouzbékistan et la plus grande ville d'Asie centrale.",
+        "La ville mêle architecture soviétique et médersas de la route de la Soie."
+      ]
+    },
+    {
+      "id": "samarcande-uz",
+      "name": "Samarcande",
+      "countryCode": "UZ",
+      "lat": 39.6542,
+      "lng": 66.9597,
+      "population": 546000,
+      "facts": [
+        "Le Régistan de Samarcande est l'un des plus beaux ensembles architecturaux du monde.",
+        "La ville fut un carrefour majeur de la route de la Soie."
+      ]
+    },
+    {
+      "id": "boukhara-uz",
+      "name": "Boukhara",
+      "countryCode": "UZ",
+      "lat": 39.7681,
+      "lng": 64.4556,
+      "population": 280000,
+      "facts": [
+        "Boukhara compte plus de 140 monuments protégés par l'UNESCO.",
+        "La vieille ville est l'une des plus intactes d'Asie centrale."
+      ]
     }
   ]
 }

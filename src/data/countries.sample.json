@@ -485,6 +485,66 @@
         "Le café kopi luwak, l'un des plus chers au monde, vient d'Indonésie.",
         "Borobudur, à Java, est le plus grand temple bouddhiste au monde."
       ]
+    },
+    {
+      "id": "OM",
+      "name": "Oman",
+      "nameFr": "Oman",
+      "code": "OM",
+      "capital": "Mascate",
+      "population": 4600000,
+      "languages": ["Arabe"],
+      "currency": "OMR",
+      "flag": "🇴🇲",
+      "bestSeason": "Octobre à avril (éviter l’été, très chaud)",
+      "prices": {
+        "flight": "500–900 € A/R (depuis Paris)",
+        "hotel": "80–200 € / nuit (mid-range)",
+        "localCost": "Vie locale : modérée à élevée (resto 8–25 €)"
+      },
+      "rating": 8.5,
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Royal_Opera_House_Muscat_2.jpg/800px-Royal_Opera_House_Muscat_2.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Oman_-_Muscat_-_Mutrah.jpg/800px-Oman_-_Muscat_-_Mutrah.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Oman_Muscat_Muttrah.jpg/800px-Oman_Muscat_Muttrah.jpg"
+      ],
+      "fastFacts": [
+        "Oman est l’un des pays les plus sûrs du Golfe et du monde arabe.",
+        "Mascate abrite la Grande Mosquée du Sultan Qaboos, l’une des plus grandes au monde.",
+        "Le pays compte des wadis spectaculaires et des plages encore préservées.",
+        "Le fort de Nizwa et le souk sont des incontournables du cœur historique.",
+        "L’encens d’Oman est réputé ; le pays fut au centre des routes de l’encens."
+      ]
+    },
+    {
+      "id": "UZ",
+      "name": "Uzbekistan",
+      "nameFr": "Ouzbékistan",
+      "code": "UZ",
+      "capital": "Tachkent",
+      "population": 35000000,
+      "languages": ["Ouzbek", "Russe"],
+      "currency": "UZS",
+      "flag": "🇺🇿",
+      "bestSeason": "Avril à juin et septembre à octobre (éviter l’hiver froid et l’été torride)",
+      "prices": {
+        "flight": "400–750 € A/R (depuis Paris, avec escale)",
+        "hotel": "40–100 € / nuit (bon rapport qualité-prix)",
+        "localCost": "Vie locale : bon marché (resto 3–10 €)"
+      },
+      "rating": 8.2,
+      "images": [
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Registan%2C_Samarkand%2C_Uzbekistan.JPG/800px-Registan%2C_Samarkand%2C_Uzbekistan.JPG",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sher-Dor_Madrasah_Samarkand.jpg/800px-Sher-Dor_Madrasah_Samarkand.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Ark_fortress_in_Bukhara.jpg/800px-Ark_fortress_in_Bukhara.jpg"
+      ],
+      "fastFacts": [
+        "Samarcande, Boukhara et Khiva sont des joyaux de la route de la Soie, classés à l’UNESCO.",
+        "Le Régistan de Samarcande est l’un des plus beaux ensembles architecturaux d’Asie centrale.",
+        "L’Ouzbékistan est le plus grand exportateur de coton de la région.",
+        "Le plov (pilaf) est le plat national ; chaque région a sa recette.",
+        "Tachkent possède l’une des plus anciennes médersas encore actives."
+      ]
     }
   ]
 }

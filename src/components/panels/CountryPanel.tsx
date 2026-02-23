@@ -112,8 +112,52 @@ export default function CountryPanel({ country, isLoading }: CountryPanelProps) 
             {country.nameFr && country.name !== country.nameFr && (
               <p className="text-base text-gray-600">{country.nameFr}</p>
             )}
+            {country.rating != null && (
+              <div className="flex items-center gap-2 mt-2">
+                <span className="text-sm font-semibold text-amber-600">{country.rating.toFixed(1).replace('.', ',')}/10</span>
+                <span className="text-xs text-gray-500">note moyenne</span>
+              </div>
+            )}
           </div>
         </div>
+
+        {/* Images */}
+        {country.images && country.images.length > 0 && (
+          <div className="mb-6">
+            <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 scrollbar-thin" style={{ scrollbarWidth: 'thin' }}>
+              {country.images.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`${country.name} ${i + 1}`}
+                  className="h-36 w-auto min-w-[200px] object-cover rounded-xl border border-gray-100 shadow-sm shrink-0"
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Best season & Prices (destination info) */}
+        {(country.bestSeason || country.prices) && (
+          <div className="mb-6 space-y-3">
+            {country.bestSeason && (
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">Meilleure saison</div>
+                <p className="text-gray-900 font-medium">{country.bestSeason}</p>
+              </div>
+            )}
+            {country.prices && (country.prices.flight || country.prices.hotel || country.prices.localCost) && (
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Prix moyens (indicatifs)</div>
+                <ul className="space-y-1.5 text-sm text-gray-800">
+                  {country.prices.flight && <li><span className="text-gray-500">Avion :</span> {country.prices.flight}</li>}
+                  {country.prices.hotel && <li><span className="text-gray-500">Hôtel :</span> {country.prices.hotel}</li>}
+                  {country.prices.localCost && <li><span className="text-gray-500">Sur place :</span> {country.prices.localCost}</li>}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Quick Stats - card style */}
         <div className="grid grid-cols-2 gap-3 mb-8">
