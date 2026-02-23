@@ -37,21 +37,10 @@ function App() {
         if (bounds) {
           const sw = bounds.getSouthWest();
           const ne = bounds.getNorthEast();
-          // Ensure all country properties are preserved including flag
-          const countryWithBounds: Country = {
-            id: country.id,
-            name: country.name,
-            nameFr: country.nameFr,
-            code: country.code,
-            capital: country.capital,
-            population: country.population,
-            languages: country.languages,
-            currency: country.currency,
-            flag: country.flag, // Explicitly preserve flag
-            fastFacts: country.fastFacts,
+          setSelectedCountry({
+            ...country,
             bounds: [[sw.lat, sw.lng], [ne.lat, ne.lng]],
-          };
-          setSelectedCountry(countryWithBounds);
+          });
         } else {
           setSelectedCountry(country);
         }
