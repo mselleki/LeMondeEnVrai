@@ -1,7 +1,7 @@
 import { useAppStore } from '../../store/useAppStore';
 
 export default function Breadcrumb() {
-  const { selectedCountry, selectedCity, clearSelection } = useAppStore();
+  const { selectedCountry, selectedCity, clearSelection, setSelectedCity } = useAppStore();
 
   if (!selectedCountry && !selectedCity) {
     return null;
@@ -18,7 +18,16 @@ export default function Breadcrumb() {
       {selectedCountry && (
         <>
           <span className="text-gray-400">/</span>
-          <span className="text-gray-900 font-semibold">{selectedCountry.name}</span>
+          {selectedCity ? (
+            <button
+              onClick={() => setSelectedCity(null)}
+              className="hover:text-gray-900 transition-colors font-medium"
+            >
+              {selectedCountry.name}
+            </button>
+          ) : (
+            <span className="text-gray-900 font-semibold">{selectedCountry.name}</span>
+          )}
         </>
       )}
       {selectedCity && (

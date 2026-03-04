@@ -4,6 +4,7 @@ import CountryPanel from './components/panels/CountryPanel';
 import CityPanel from './components/panels/CityPanel';
 import DiscoveriesDrawer from './components/discoveries/DiscoveriesDrawer';
 import Header from './components/header/Header';
+import ToastContainer from './components/ui/ToastContainer';
 import { useAppStore } from './store/useAppStore';
 import { loadGeoJSON } from './utils/loadGeoJSON';
 import { getCountryBounds } from './utils/geography';
@@ -11,7 +12,7 @@ import type { GeoJSONData, GeoJSONFeature } from './types';
 import countriesData from './data/countries.sample.json';
 
 function App() {
-  const { selectedCountry, selectedCity, setSelectedCountry, ui } = useAppStore();
+  const { selectedCountry, selectedCity, setSelectedCountry, ui, showToast } = useAppStore();
   const [geoJsonData, setGeoJsonData] = useState<GeoJSONData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -44,6 +45,9 @@ function App() {
         } else {
           setSelectedCountry(country);
         }
+      } else {
+        const countryName = feature.properties.NAME_EN || feature.properties.NAME || countryCode;
+        showToast(`${countryName} n'est pas encore dans notre base`, 'info');
       }
     }
   };
@@ -99,6 +103,9 @@ function App() {
 
       {/* Discoveries Drawer */}
       <DiscoveriesDrawer />
+
+      {/* Toast notifications */}
+      <ToastContainer />
     </div>
   );
 }

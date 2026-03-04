@@ -25,7 +25,7 @@ function SkeletonCard() {
 }
 
 export default function CountryPanel({ country, isLoading }: CountryPanelProps) {
-  const { curiosityScores, addDiscovery, discoveries, setSelectedCity, clearSelection } = useAppStore();
+  const { curiosityScores, addDiscovery, discoveries, setSelectedCity, clearSelection, showToast } = useAppStore();
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -61,6 +61,7 @@ export default function CountryPanel({ country, isLoading }: CountryPanelProps) 
         name: country.name,
         countryCode: country.code,
       });
+      showToast(`${country.name} ajouté à Mes découvertes`, 'success');
     }
   };
 
@@ -264,12 +265,6 @@ export default function CountryPanel({ country, isLoading }: CountryPanelProps) 
             }`}
           >
             {isSaved ? '✓ Déjà dans Mes découvertes' : '💾 Ajouter à Mes découvertes'}
-          </button>
-          <button
-            disabled
-            className="w-full py-3 px-4 rounded-xl font-medium bg-gray-100 text-gray-400 cursor-not-allowed text-sm"
-          >
-            🎯 Quiz (bientôt)
           </button>
         </div>
       </div>

@@ -8,7 +8,7 @@ interface CityPanelProps {
 }
 
 export default function CityPanel({ city }: CityPanelProps) {
-  const { addDiscovery, discoveries, setSelectedCity, clearSelection } = useAppStore();
+  const { addDiscovery, discoveries, setSelectedCity, clearSelection, showToast } = useAppStore();
   
   const country = countriesData.countries.find((c) => c.code === city.countryCode);
   const CountryFlagComponent = country?.code ? (Flag[country.code as keyof typeof Flag] as React.ComponentType<{ className?: string; title?: string }>) : null;
@@ -25,6 +25,7 @@ export default function CityPanel({ city }: CityPanelProps) {
       lat: city.lat,
       lng: city.lng,
     });
+    showToast(`${city.name} ajouté à Mes découvertes`, 'success');
   };
 
   const handleBackToCountry = () => {

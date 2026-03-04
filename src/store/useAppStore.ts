@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { Country, City, Discovery, AppState } from '../types';
+import type { Country, City, Discovery, AppState, Toast } from '../types';
 
 interface AppStore extends AppState {
   // Actions
@@ -14,6 +14,10 @@ interface AppStore extends AppState {
   setMapStyle: (style: 'openstreetmap' | 'positron' | 'voyager') => void;
   updateCuriosityScore: (countryId: string, increment: number) => void;
   clearSelection: () => void;
+  // Toast
+  toasts: Toast[];
+  showToast: (message: string, type?: Toast['type']) => void;
+  dismissToast: (id: string) => void;
 }
 
 const STORAGE_KEY = 'lemondeenvrai-storage';
@@ -26,6 +30,7 @@ export const useAppStore = create<AppStore>()(
       selectedCityId: null,
       selectedCity: null,
       discoveries: [],
+      toasts: [],
       ui: {
         drawerOpen: false,
         panelOpen: false,
@@ -143,6 +148,18 @@ export const useAppStore = create<AppStore>()(
             panelOpen: false,
           },
         });
+      },
+
+      showToast: (message, type = 'info') => {
+        const id = `toast-${Date.now()}`;
+        set({ toasts: [...get().toasts, { id, message, type }] });
+        setTimeout(() => {
+          get().dismissToast(id);
+        }, 3500);
+      },
+
+      dismissToast: (id) => {
+        set({ toasts: get().toasts.filter((t) => t.id !== id) });
       },
     }),
     {

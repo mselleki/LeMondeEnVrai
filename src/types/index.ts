@@ -49,6 +49,12 @@ export interface Discovery {
 
 export type MapStyle = 'openstreetmap' | 'positron' | 'voyager';
 
+export interface Toast {
+  id: string;
+  message: string;
+  type: 'success' | 'info' | 'error';
+}
+
 export interface AppState {
   selectedCountryId: string | null;
   selectedCountry: Country | null;
